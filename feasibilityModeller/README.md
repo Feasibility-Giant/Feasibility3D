@@ -1,38 +1,38 @@
-<!--
-Keep this document short & concise,
-linking to external resources instead of including content in-line.
-See 'release/text/readme.html' for the end user read-me.
--->
+## **Feasibility3D Modelling Software for Pipeline Modelling and Fluid Simulations :art: :computer:**
+**Introduction :wave:**
+This 3D modelling software is a specialized tool designed and modified specifically for the purpose of pipeline modelling and fluid simulations. It provides engineers and researchers with a powerful platform to create and analyze complex pipeline systems and conduct fluid flow simulations.
 
-Blender
-=======
+**Key Features :key:**
+User-Friendly Interface :art: :computer:
 
-Blender is the free and open source 3D creation suite.
-It supports the entirety of the 3D pipeline-modeling, rigging, animation, simulation, rendering, compositing,
-motion tracking and video editing.
+The software boasts an intuitive and user-friendly interface, making it accessible to both beginners and experienced users.
+Pipeline Modelling :straight_ruler:
 
-![Blender screenshot](https://code.blender.org/wp-content/uploads/2018/12/springrg.jpg "Blender screenshot")
+Create intricate 3D pipeline models with customizable geometries and dimensions.
+Easily design bends, junctions, valves, and other pipeline components.
+Fluid Simulation :ocean:
 
-Project Pages
--------------
+Conduct detailed fluid simulations using various numerical methods like Finite Element Method (FEM) and Large Eddy Simulation (LES).
+Analyze transient flow behavior and pressure distribution along the pipeline.
+Boundary Conditions :cyclone:
 
-- [Main Website](http://www.blender.org)
-- [Reference Manual](https://docs.blender.org/manual/en/latest/index.html)
-- [User Community](https://www.blender.org/community/)
+Define and apply different boundary conditions, including inlets, outlets, and wall conditions, to simulate real-world scenarios.
+Mesh Generation :spider_web:
 
-Development
------------
+Automatically generate high-quality meshes that adapt to the pipeline geometry, ensuring accurate simulations.
+Post-Processing :bar_chart:
 
-- [Build Instructions](https://wiki.blender.org/wiki/Building_Blender)
-- [Code Review & Bug Tracker](https://projects.blender.org)
-- [Developer Forum](https://devtalk.blender.org)
-- [Developer Documentation](https://wiki.blender.org)
+Visualize simulation results with interactive plots and animations for a comprehensive analysis.
+Getting Started :rocket:
+**Follow these steps to get started with the software:**
+
+Clone this repository to your local machine using git clone.
+Install the required dependencies and libraries.
+Launch the software and explore its features using the provided sample pipeline models.
+Contributing :handshake:
 
 
-License
--------
+**Contact :email:**
+For any questions or feedback, feel free to contact us at jbunakiye@gmail.com.
 
-Blender as a whole is licensed under the GNU General Public License, Version 3.
-Individual files may have a different, but compatible license.
-
-See [blender.org/about/license](https://www.blender.org/about/license) for details.
+Let's unleash the power of 3D modelling and fluid simulations for pipeline analysis! :oil_drum: :chart_with_upwards_trend:
