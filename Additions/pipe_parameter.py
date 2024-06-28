@@ -12,7 +12,6 @@ import bpy
 from bpy.props import FloatProperty, BoolProperty
 import math
 import csv
-import pandas as pd
 import os
 
 class Pipeline:
@@ -285,28 +284,31 @@ class CalculatePipelineParametersOperator(bpy.types.Operator):
 
          # Save parameters to CSV
         self.save_to_csv(leak_detected, erosion_rate, wax_deposition_rate, wall_shear_stress)
-       
+        self.report({'INFO'}, "Pipeline parameters calculated and saved to CSV")
         return {'FINISHED'}
+    
     def save_to_csv(self, leak_detected, erosion_rate, wax_deposition_rate, wall_shear_stress):
         file_path = os.path.join(bpy.path.abspath("//"), "pipeline_parameters.csv")
         
-        # Create a DataFrame
-        df = pd.DataFrame([{
+        # Prepare the data
+        data = {
             "Leak Detected": leak_detected,
             "Erosion Rate (kg/m²/s)": erosion_rate,
             "Wax Deposition Rate (kg/m²/s)": wax_deposition_rate,
             "Wall Shear Stress (Pa)": wall_shear_stress
-        }])
+        }
         
         # Check if the file exists
         file_exists = os.path.isfile(file_path)
         
-        # Write the DataFrame to a CSV file
-        if file_exists:
-            df.to_csv(file_path, mode='a', header=False, index=False)
-        else:
-            df.to_csv(file_path, mode='w', header=True, index=False)
-
+        # Write to the CSV file
+        with open(file_path, mode='a', newline='') as csvfile:
+            fieldnames = ["Leak Detected", "Erosion Rate (kg/m²/s)", "Wax Deposition Rate (kg/m²/s)", "Wall Shear Stress (Pa)"]
+            writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+            
+            if not file_exists:
+                writer.writeheader()
+            writer.writerow(data)
 
 def register():
     bpy.utils.register_class(CalculatePipelineParameters)
